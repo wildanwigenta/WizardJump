@@ -1,2 +1,0 @@
-# WizardJump
-Godot Games
