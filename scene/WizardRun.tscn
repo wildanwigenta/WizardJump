@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://cx3g51u4bey0e" path="res://assets/character/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00019.png" id="43_i6e8k"]
 [ext_resource type="Script" uid="uid://cganjedg70f0" path="res://script/kill_zone.gd" id="53_ec4qd"]
 [ext_resource type="Script" uid="uid://cnj0v281mtgui" path="res://script/countdown.gd" id="53_shyaq"]
+[ext_resource type="PackedScene" uid="uid://pacfearragwi" path="res://scene/coin.tscn" id="55_b5i1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ec4qd"]
 texture = ExtResource("2_yquv4")
@@ -2853,6 +2854,9 @@ layer = -1
 position = Vector2(574, 327.5)
 scale = Vector2(1.2083334, 1.36875)
 texture = ExtResource("1_1qx0d")
+
+[node name="Coin" parent="." unique_id=522552575 instance=ExtResource("55_b5i1t")]
+position = Vector2(314, 229)
 
 [connection signal="timeout" from="Player/Countdown/Timer" to="Player/Countdown" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
