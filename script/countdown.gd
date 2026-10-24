@@ -17,7 +17,7 @@ func _on_timer_timeout() -> void:
 	if countdown > 0:
 		countdown -= 1
 		text = str(countdown)
-		print(countdown)
+		#print(countdown)
 	else:
 		timer.stop()
 		get_tree().reload_current_scene()
