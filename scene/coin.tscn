@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://pacfearragwi"]
 
+[ext_resource type="Script" uid="uid://v7iqo77cyknd" path="res://script/coin.gd" id="1_8n4ui"]
 [ext_resource type="Texture2D" uid="uid://catudaopdahwk" path="res://assets/coin/coin-1.png" id="1_sdm6u"]
 [ext_resource type="Texture2D" uid="uid://cm2l6bgm1qk7h" path="res://assets/coin/coin-2.png" id="2_8n4ui"]
 [ext_resource type="Texture2D" uid="uid://dqodhpvvq6i8l" path="res://assets/coin/coin-3.png" id="3_lnuxq"]
@@ -104,25 +105,31 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_85vn0")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"coin",
 "speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_al4r6"]
-radius = 75.0
+radius = 9.0
 
 [node name="Coin" type="Node2D" unique_id=522552575]
+script = ExtResource("1_8n4ui")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1644973566]
-position = Vector2(93.249985, 89.249985)
-scale = Vector2(0.33886725, 0.33886725)
+position = Vector2(28.724993, 28.724993)
+scale = Vector2(0.044043, 0.044043)
 sprite_frames = SubResource("SpriteFrames_al4r6")
 animation = &"coin"
+autoplay = "coin"
+frame_progress = 0.7808807
 speed_scale = 1.5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1595813463]
+position = Vector2(10, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=392086245]
-position = Vector2(95, 90)
+position = Vector2(19, 15)
 shape = SubResource("CircleShape2D_al4r6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
