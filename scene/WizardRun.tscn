@@ -52,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://ipce7x61ugv" path="res://assets/character/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00017.png" id="41_hkxyj"]
 [ext_resource type="Texture2D" uid="uid://yj611ss46lgh" path="res://assets/character/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00018.png" id="42_dgmso"]
 [ext_resource type="Texture2D" uid="uid://cx3g51u4bey0e" path="res://assets/character/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00019.png" id="43_i6e8k"]
+[ext_resource type="PackedScene" uid="uid://cwwvrlipvyakc" path="res://scene/coin_ui.tscn" id="52_g30p8"]
 [ext_resource type="Script" uid="uid://cganjedg70f0" path="res://script/kill_zone.gd" id="53_ec4qd"]
 [ext_resource type="Script" uid="uid://cnj0v281mtgui" path="res://script/countdown.gd" id="53_shyaq"]
 [ext_resource type="PackedScene" uid="uid://pacfearragwi" path="res://scene/coin.tscn" id="55_b5i1t"]
@@ -2826,11 +2827,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
+[node name="coin_ui" parent="Player" unique_id=550493023 instance=ExtResource("52_g30p8")]
+offset_left = 37.499996
+offset_top = 112.500046
+offset_right = 37.499996
+offset_bottom = 112.500046
+
 [node name="Countdown" type="Label" parent="Player" unique_id=1213563222]
-offset_left = -4.166588
-offset_top = 108.33328
-offset_right = 58.333412
-offset_bottom = 171.33328
+offset_left = -49.999924
+offset_top = 112.49995
+offset_right = 12.500076
+offset_bottom = 175.49994
 theme_override_font_sizes/font_size = 45
 script = ExtResource("53_shyaq")
 
@@ -2855,8 +2862,20 @@ position = Vector2(574, 327.5)
 scale = Vector2(1.2083334, 1.36875)
 texture = ExtResource("1_1qx0d")
 
-[node name="Coin" parent="." unique_id=522552575 instance=ExtResource("55_b5i1t")]
-position = Vector2(314, 229)
+[node name="Coin1" parent="." unique_id=522552575 instance=ExtResource("55_b5i1t")]
+position = Vector2(323, 235)
+
+[node name="Coin2" parent="." unique_id=1285865782 instance=ExtResource("55_b5i1t")]
+position = Vector2(694, -17)
+
+[node name="Coin3" parent="." unique_id=535540005 instance=ExtResource("55_b5i1t")]
+position = Vector2(340, -224)
+
+[node name="Coin4" parent="." unique_id=37118070 instance=ExtResource("55_b5i1t")]
+position = Vector2(370, -467)
+
+[node name="Coin5" parent="." unique_id=232437559 instance=ExtResource("55_b5i1t")]
+position = Vector2(371, -739)
 
 [connection signal="timeout" from="Player/Countdown/Timer" to="Player/Countdown" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
