@@ -20,5 +20,6 @@ func _on_timer_timeout() -> void:
 		#print(countdown)
 	else:
 		timer.stop()
+		Controller.reset_coin()
 		get_tree().reload_current_scene()
 		#print("dead")
